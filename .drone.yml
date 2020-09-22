@@ -33,15 +33,18 @@ services:
       - 27017
     environment:
       MONGODB_REPLICA_SET_MODE: primary
+      ALLOW_EMPTY_PASSWORD: yes
   - name: mongors002
     image: bitnami/mongodb:4.2.9
     ports:
       - 27017
     environment:
       MONGODB_REPLICA_SET_MODE: secondary
+      ALLOW_EMPTY_PASSWORD: yes
   - name: mongors003
     image: bitnami/mongodb:4.2.9
     ports:
       - 27017
     environment:
       MONGODB_REPLICA_SET_MODE: secondary
+      ALLOW_EMPTY_PASSWORD: yes
