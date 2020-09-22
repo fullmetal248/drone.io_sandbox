@@ -16,29 +16,32 @@ steps:
     image: gradle:6.6.1-jdk11
     environment:
     commands:
-      - ./gradlew
+      - sh ./gradlew
 
   - name: test
     image: gradle:6.6.1-jdk11
     environment:
       TZ: 'Asia/Tokyo'
     commands:
-      - ./gradlew
+      - sh ./gradlew
 
 
 services:
   - name: mongors001
-    image: 'mongo:4.2.9'
-#    command: 'mongod --replSet rs1 --noprealloc --smallfiles'
+    image: bitnami/mongodb:4.2.9
     ports:
       - 27017
+    environment:
+      - MONGODB_REPLICA_SET_MODE=primary
   - name: mongors002
-    image: mongo:4.2.9-bionic
-#    command: 'mongod --replSet rs1 --noprealloc --smallfiles'
+    image: bitnami/mongodb:4.2.9
     ports:
       - 27017
+    environment:
+      - MONGODB_REPLICA_SET_MODE=secondary
   - name: mongors003
-    image: mongo:4.2.9-bionic
-#    command: 'mongod --replSet rs1 --noprealloc --smallfiles'
+    image: bitnami/mongodb:4.2.9
     ports:
       - 27017
+    environment:
+      - MONGODB_REPLICA_SET_MODE=secondary
