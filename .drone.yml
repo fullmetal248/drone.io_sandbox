@@ -32,16 +32,16 @@ services:
     ports:
       - 27017
     environment:
-      - MONGODB_REPLICA_SET_MODE=primary
+      MONGODB_REPLICA_SET_MODE: primary
   - name: mongors002
     image: bitnami/mongodb:4.2.9
     ports:
       - 27017
     environment:
-      - MONGODB_REPLICA_SET_MODE=secondary
+      MONGODB_REPLICA_SET_MODE: secondary
   - name: mongors003
     image: bitnami/mongodb:4.2.9
     ports:
       - 27017
     environment:
-      - MONGODB_REPLICA_SET_MODE=secondary
+      MONGODB_REPLICA_SET_MODE: secondary
