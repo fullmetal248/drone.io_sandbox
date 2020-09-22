@@ -140,3 +140,4 @@ Temporary Items
 .apdisk
 
 .gradle/
+!gradle/wrapper/gradle-wrapper.jar
