@@ -32,14 +32,12 @@ services:
     command: mongod --replSet rs1 --noprealloc --smallfiles
     ports:
       - 27017
-  mongod002:
-    name: mongors002
+  - name: mongors002
     image: mongo:3.4.5
     command: mongod --replSet rs1 --noprealloc --smallfiles
     ports:
       - 27017
-  mongod003:
-    name: mongors003
+  - name: mongors003
     image: mongo:3.4.5
     command: mongod --replSet rs1 --noprealloc --smallfiles
     ports:
